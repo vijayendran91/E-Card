@@ -13,9 +13,9 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-
+      redirect_to user_path(@user.user_name)
     else
-      flash[:notice] = "Invalid username/password combination."
+      flash[:danger] = "Invalid username/password combination."
       redirect_to(:action => "new")
     end
   end
