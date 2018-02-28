@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :user
   root :to => "welcome#index"
+  get '/about', to: 'user#about'
+  
   get 'user/:id/profile', to: 'user#profile'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

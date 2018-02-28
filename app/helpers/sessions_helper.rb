@@ -8,4 +8,6 @@ def current_user
     @current_user ||= User.find_by(user_name: session[:user_name])
 end
 
+
+
 end
