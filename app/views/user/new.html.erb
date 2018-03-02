@@ -1,22 +1,47 @@
 
 <% flash.each do |key, value| %>
-  <div class="alert"><%= value %></div>
+<div class="alert"><%= value %></div>
 <% end %>
 
 
-
-<%= form_for :user, url: user_index_path, html: { method: :post } do |f| %>
-  <%= f.label :"user name" %>
-  <%= f.text_field :user_name%>
-  <%= f.label :"email" %>
-  <%= f.text_field :email%>
-  <%= f.label :"First Name" %>
-  <%= f.text_field :fname %>
-  <%= f.label :"Last Name" %>
-  <%= f.text_field :lname %>
-  <%= f.label :"password" %>
-  <%= f.password_field :password %>
-  <%= f.label :"password confirmation" %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Sign Up", class: "btn btn-primary" %>
-<% end %>
+<div align="left">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <%= form_for :user, url: user_index_path, html: { method: :post } do |f| %>
+      <div class="form-group">
+        <div class='row'>
+          <%= f.label :"user name" %>
+          <%= f.text_field :user_name,class:'form-control'%>
+        </div>
+        <br>
+        <div class='row'>
+          <%= f.label :"email" %>
+          <%= f.text_field :email,class:'form-control'%>
+        </div>
+        <br>
+        <div class='row'>
+          <%= f.label :"First Name" %>
+          <%= f.text_field :fname ,class:'form-control'%>
+        </div>
+        <br>
+        <div class='row'>
+          <%= f.label :"Last Name" %>
+          <%= f.text_field :lname ,class:'form-control'%>
+        </div>
+        <br>
+        <div class='row'>
+          <%= f.label :"password" %>
+          <%= f.password_field :password ,class:'form-control'%>
+        </div>
+        <br>
+        <div class='row'>
+          <%= f.label :"password confirmation" %>
+          <%= f.password_field :password_confirmation ,class:'form-control'%>
+        </div>
+        <br>
+        <%= f.submit "Sign Up", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
