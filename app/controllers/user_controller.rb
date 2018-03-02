@@ -14,6 +14,10 @@ class UserController < ApplicationController
   def about
   end
 
+  def edit
+    @user=User.where(user_name: params[:id]).first
+  end
+
   def help
   end
 
@@ -26,6 +30,10 @@ class UserController < ApplicationController
       redirect_to(:action => "new")
     end
   end
+  def update
+    
+  end
+
 
   def profile
     @user=User.where(user_name: params[:id]).first
@@ -35,5 +43,8 @@ class UserController < ApplicationController
 private
   def user_params
     params.require(:user).permit(:user_name,:fname,:lname,:email,:password,:password_confirmation)
+  end
+  def user_params_update
+    params.require(:user).permit(:user_name,:fname,:lname,:email,:mname,:passport,:aadhaar)
   end
 end
