@@ -1,3 +1,8 @@
 <% provide(:title, @user.fname) %>
 <%= @user.fname %>
-<%= current_user.lname %>
+<% if current_user %>
+  <%=current_user.lname%>
+<%else%>
+  <%=current_user%>
+<%end%>
+<%= link_to "Log out",logout_path,method: "delete"%>
