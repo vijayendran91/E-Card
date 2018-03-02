@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :father_name
       t.string :password_digest
       t.string :passport
-      t.string :aadhaar
+      t.string :aadhaar, unique: true
 
       t.timestamps
     end

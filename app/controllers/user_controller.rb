@@ -4,6 +4,7 @@ class UserController < ApplicationController
 
   def show
     @user=User.where(user_name: params[:id]).first
+    @user_arr=@user.inspect
   end
 
   def new
