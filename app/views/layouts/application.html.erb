@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ECard</title>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag 'download.png' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <div class="navbar-brand">
-              <%=link_to "TN E-Services","/",padding_top: "15px",float: "none",margin: "0"%>
-          </div>
+<head>
+  <title>ECard</title>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'download.png' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+          <%=link_to "TN E-Services","/",padding_top: "15px",float: "none",margin: "0"%>
         </div>
-        <ul class="nav navbar-nav">
-          <li><%= link_to "About Us", "/about" %></li>
-          <li><%= link_to "Documents Required", "/req_docs" %></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-
-        <ul class= "nav navbar-nav navbar-right">
-          <% if current_user %>
-            <li><%= link_to "Log Out", logout_path,method: "delete"%></li>
-          <%else%>
-            <li><%= link_to "Sign Up",new_user_path %></li>
-            <li><%= link_to "Sign In", login_path%></li>
-          <%end%>
-        </ul>
       </div>
-    </nav>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About Us", "/about" %></li>
+        <li><%= link_to "Documents Required", "/req_docs" %></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+
+      <ul class= "nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li><%= link_to "Log Out", logout_path,method: "delete"%></li>
+        <%else%>
+        <li><%= link_to "Sign Up",new_user_path %></li>
+        <li><%= link_to "Sign In", login_path%></li>
+        <%end%>
+      </ul>
+    </div>
+  </nav>
 
 
 
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-    <div class="container">
-
-    <%= debug(params) if Rails.env.development? %>
-  </div>
-  </body>
+<body>
+  <%= yield %>
+</body>
+<div class="container">
+  <%= debug(params) if Rails.env.development? %>
+</div>
 </html>
