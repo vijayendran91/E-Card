@@ -11,7 +11,21 @@ class UserController < ApplicationController
     @user=User.new
   end
 
+
+
   def about
+  end
+  def edit
+    @user=User.find_by_user_name(params[:id])
+  end
+
+  def update
+    @user=User.find_by_user_name(params[:id])
+    if @user.update_attributes user_params
+      redirect_to user_path
+    else
+      redirect_to root_path
+    end
   end
 
   def help
@@ -34,6 +48,7 @@ class UserController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:user_name,:fname,:lname,:email,:password,:password_confirmation)
+    params.require(:user).permit(:user_name,:fname,:lname,:email,:password,:password_confirmation,:mname,:passport,:aadhaar,:dob)
   end
+
 end
