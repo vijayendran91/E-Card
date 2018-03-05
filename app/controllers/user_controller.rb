@@ -11,7 +11,15 @@ class UserController < ApplicationController
     @user=User.new
   end
 
-
+  def submit
+    @user=User.find_by_user_name(params[:user_id])
+    @user.flag=1
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      redirect_to root_path
+    end
+  end
 
   def about
   end
@@ -19,14 +27,7 @@ class UserController < ApplicationController
     @user=User.find_by_user_name(params[:id])
   end
 
-  def update
-    @user=User.find_by_user_name(params[:id])
-    if @user.update_attributes user_params
-      redirect_to user_path
-    else
-      redirect_to root_path
-    end
-  end
+
 
   def edit
     @user=User.where(user_name: params[:id]).first
@@ -44,6 +45,7 @@ class UserController < ApplicationController
       redirect_to(:action => "new")
     end
   end
+
   def update
     @user=User.find_by_user_name(params[:id])
 

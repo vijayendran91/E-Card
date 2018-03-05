@@ -2,10 +2,15 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  resources :user
+  resources :user do 
+    get :submit
+  end
+
+
+
   root :to => "welcome#index"
   get '/about', to: 'user#about'
-  
+  post '/user/:id/submit', to: 'user#submit'
   get 'user/:id/profile', to: 'user#profile'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
