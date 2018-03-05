@@ -1,23 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
+  user_name: MyString
   fname: MyString
-  mname: MyString
   lname: MyString
-  dob: 2018-02-28
-  father_name: MyString
-  password_digest: MyString
+  mname: MyString
+  email: MyString
   passport: MyString
   aadhaar: MyString
+  flag: 1
+  password_digest: MyString
+  father_name: MyString
+  dob: 2018-03-05
 
 two:
-  email: MyString
+  user_name: MyString
   fname: MyString
-  mname: MyString
   lname: MyString
-  dob: 2018-02-28
-  father_name: MyString
-  password_digest: MyString
+  mname: MyString
+  email: MyString
   passport: MyString
   aadhaar: MyString
+  flag: 1
+  password_digest: MyString
+  father_name: MyString
+  dob: 2018-03-05

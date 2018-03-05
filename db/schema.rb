@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228055833) do
+ActiveRecord::Schema.define(version: 20180305034929) do
 
-  create_table "users", id: false, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "user_name"
-    t.string "email"
     t.string "fname"
-    t.string "mname"
     t.string "lname"
-    t.date "dob"
-    t.string "father_name"
-    t.string "password_digest"
+    t.string "mname"
+    t.string "email"
     t.string "passport"
     t.string "aadhaar"
+    t.integer "flag"
+    t.string "password_digest"
+    t.string "father_name"
+    t.date "dob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
