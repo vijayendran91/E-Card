@@ -8,6 +8,10 @@ def current_user
     @current_user ||= User.find_by(user_name: session[:user_name])
 end
 
+def set_current_user(user)
+  @current_user = user
+end
+
 def log_out
   session.delete(:user_name)
   @current_user=nil

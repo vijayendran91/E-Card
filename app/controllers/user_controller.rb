@@ -1,10 +1,12 @@
 class UserController < ApplicationController
-    
+  include SessionsHelper
   def signup
   end
 
   def show
+
     @user=User.where(user_name: params[:id]).first
+    set_current_user @user
     @user_arr=@user.inspect
   end
 
