@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+    
   def signup
   end
 
@@ -48,6 +49,7 @@ class UserController < ApplicationController
 
   def update
     @user=User.find_by_user_name(params[:id])
+
     if @user.update(user_params)
       redirect_to user_path
     else
