@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :passport
       t.string :aadhaar
-      t.integer :flag
+      t.integer :flag, :default => 0
       t.string :password_digest
       t.string :father_name
       t.date :dob

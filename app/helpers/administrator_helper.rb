@@ -4,11 +4,13 @@ module AdministratorHelper
     session[:user_id]=user.user_id
   end
 
-
+  def current_admin
+    @current_admin ||= Gadmin.find_by_user_id(session[:user_id])
+  end
 
   def admin_log_out
     session.delete(:user_id)
-    @current_user=nil
+    @current_admin=nil
   end
 
 

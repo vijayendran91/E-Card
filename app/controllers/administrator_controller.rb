@@ -1,13 +1,12 @@
 class AdministratorController < ApplicationController
 
-  def admin_log_in(user)
-    session[:user_id]=user.user_id
-  end
+  include AdministratorHelper
+
   def create
     if params[:administrator][:user_id]
       user = Gadmin.find_by_user_id(params[:administrator][:user_id])
       if user && user.authenticate(params[:administrator][:password])
-        admin_log_in user
+        a_log_in user
         redirect_to administrator_index_path
       else
         flash.now[:danger] = 'Invalid email/password combination'
@@ -20,7 +19,14 @@ class AdministratorController < ApplicationController
   end
 
   def index
-    @user=User.all
+    @user=User.where(flag: 1)
+    @current_admin=current_admin
+
+  end
+
+  def delete
+    admin_log_out
+    render administrator_path
   end
 
   private

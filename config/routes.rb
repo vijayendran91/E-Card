@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'administrator/admin_log_in'
-
+  delete 'administrator/admin_log_out'
   get 'sessions/new'
 
   resources :user do
