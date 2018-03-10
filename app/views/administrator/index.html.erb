@@ -5,30 +5,9 @@
     <% @user.each do |x|%>
     <tbody>
       <tr>
-        <th scope="row">First Name</th>
-        <td><%=x.fname%></td>
+        <th scope="row"><%=x.fname%></th>
+        <td><%= link_to "View Profile", administrator_index_path%></td>
       </tr>
-      <tr>
-        <th scope="row">Middle Name</th>
-        <td><%=x.mname%></td>
-      </tr>
-      <tr>
-        <th scope="row">Last Name</th>
-        <td><%=x.lname%></td>
-      </tr>
-      <tr>
-        <th scope="row">Father's Name</th>
-        <td><%=x.father_name%></td>
-      </tr>
-      <tr>
-        <th scope="row">Passport Number</th>
-        <td><%= x.passport%></td>
-      </tr>
-      <tr>
-        <th scope="row">Aadhaar Number</th>
-        <td><%=x.aadhaar%></td>
-      </tr>
-
     </tbody>
     <%end%>
   </table>

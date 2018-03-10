@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'administrator/admin_log_in'
   delete 'administrator/admin_log_out'
   get 'sessions/new'
-
+  post 'administrator/:id/verdict', to: 'administrator#verdict'
   resources :user do
     get :submit
   end
