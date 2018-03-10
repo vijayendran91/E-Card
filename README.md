@@ -1,24 +1,6 @@
-# README
+Steps to install RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://gorails.com/setup/ubuntu/16.04
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In terminal, in the directory you have pulled this, type "rails  s" to start the server. Got to 0.0.0.0:3000 for homepage.
