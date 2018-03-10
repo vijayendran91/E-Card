@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+ class SessionsController < ApplicationController
 
   def create
     if params[:session][:user_name]
