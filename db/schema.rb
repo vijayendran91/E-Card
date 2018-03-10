@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308072419) do
+ActiveRecord::Schema.define(version: 20180310164738) do
 
   create_table "admins", force: :cascade do |t|
     t.string "a_user"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 20180308072419) do
     t.date "dob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "passport_file_name"
+    t.string "passport_content_type"
+    t.integer "passport_file_size"
+    t.datetime "passport_updated_at"
+    t.string "passport_image_file_name"
+    t.string "passport_image_content_type"
+    t.integer "passport_image_file_size"
+    t.datetime "passport_image_updated_at"
+    t.string "aadhar_image_file_name"
+    t.string "aadhar_image_content_type"
+    t.integer "aadhar_image_file_size"
+    t.datetime "aadhar_image_updated_at"
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 

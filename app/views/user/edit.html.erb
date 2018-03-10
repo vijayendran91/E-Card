@@ -2,9 +2,6 @@
   <div class="col-md-6 col-md-offset-3">
 
     <%= form_for :user, url: user_path, method: :put do |f| %>
-
-
-
     <div class="form-group">
       <%= f.label :"user name" %>
       <%= f.text_field :user_name,class:'form-control',placeholder: @user.user_name%>
@@ -34,13 +31,21 @@
       <%= f.text_field :passport ,class:'form-control'%>
     </div>
     <div class="form-group">
+      <%= f.label :"Upload Passport" %>
+      <%= f.file_field :passport_image ,class:'form-control'%>
+    </div>
+    <div class="form-group">
       <%= f.label :"Aadhaar" %>
       <%= f.text_field :aadhaar ,class:'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Upload Aadhaar" %>
+      <%= f.file_field :aadhar_image ,class:'form-control'%>
     </div>
 
     <%= f.submit "Edit", class: "btn btn-primary",method: "put" %>
 
     <%end%>
-    
+
   </div>
 </div>

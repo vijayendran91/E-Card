@@ -23,8 +23,20 @@
         <td><%= @user.passport%></td>
       </tr>
       <tr>
+        <th scope="row">Passport Image</th>
+        <td><%=image_tag @user.passport_image.url(:medium)%></td>
+      </tr>
+      <tr>
         <th scope="row">Aadhaar Number</th>
         <td><%=@user.aadhaar%></td>
+      </tr>
+      <tr>
+        <th scope="row">Aadhaar Image</th>
+        <%if @user.aadhar_image?%>
+        <td><%=image_tag @user.aadhar_image.url(:medium)%></td>
+        <%else%>
+        <td>Image not Available</td>
+        <%end%>
       </tr>
     </tbody>
   </table>
