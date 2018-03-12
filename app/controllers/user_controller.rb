@@ -8,6 +8,9 @@ class UserController < ApplicationController
     @user_arr=@user.inspect
   end
 
+  def help
+  end
+
   def new
     @user=User.new
   end
@@ -29,7 +32,14 @@ class UserController < ApplicationController
     @user=User.find_by_user_name(params[:id])
   end
 
+  def eb
+  end
 
+  def water
+  end
+
+  def property
+  end
 
   def edit
     @user=User.where(user_name: params[:id]).first

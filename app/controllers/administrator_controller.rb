@@ -24,6 +24,10 @@ class AdministratorController < ApplicationController
 
   end
 
+  def user_index
+    @user=User.find_by_user_name(params[:id])
+  end
+
   def delete
     admin_log_out
     render administrator_path
@@ -32,5 +36,9 @@ class AdministratorController < ApplicationController
   private
   def admin_params
     params.require(:administrator).permit(:user_id,:password)
+  end
+
+  def user_params
+    params.require(:user).permit(:user_name)
   end
 end

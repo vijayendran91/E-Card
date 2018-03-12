@@ -6,7 +6,7 @@
     <tbody>
       <tr>
         <th scope="row"><%=x.fname%></th>
-        <td><%= link_to "View Profile", administrator_index_path%></td>
+        <td><%= link_to "View Profile", administrator_user_path(x)%></td>
       </tr>
     </tbody>
     <%end%>
