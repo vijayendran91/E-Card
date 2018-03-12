@@ -1,10 +1,8 @@
 class UserController < ApplicationController
   include SessionsHelper
-  def signup
-  end
+  #before_action :logged_in_user
 
   def show
-
     @user=User.where(user_name: params[:id]).first
     set_current_user @user
     @user_arr=@user.inspect
@@ -26,6 +24,7 @@ class UserController < ApplicationController
 
   def about
   end
+
   def edit
     @user=User.find_by_user_name(params[:id])
   end
@@ -57,13 +56,12 @@ class UserController < ApplicationController
     else
       redirect_to root_path
     end
-
-
   end
 
 
   def profile
     @user=User.where(user_name: params[:id]).first
+    render :layout => false
   end
 
 

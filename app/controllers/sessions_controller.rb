@@ -5,7 +5,11 @@
       user = User.find_by(user_name: params[:session][:user_name])
       if user && user.authenticate(params[:session][:password])
         log_in user
-        redirect_to user_path(params[:session][:user_name])
+        if user.flag == 3
+          redirect_to user_profile_path(user)
+        else
+          redirect_to user_path(params[:session][:user_name])
+        end
       else
         flash.now[:danger] = 'Invalid email/password combination'
         render 'new'

@@ -8,12 +8,14 @@ Rails.application.routes.draw do
     get :submit
   end
 
+
+
   resources :administrator
 
   root :to => "welcome#index"
   get '/about', to: 'user#about'
   post '/user/:id/submit', to: 'user#submit'
-  get 'user/:id/profile', to: 'user#profile'
+  get 'user/:id/profile', to: 'user#profile', as: 'user_profile'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
