@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'administrator/:id/user_index', to: 'administrator#user_index', as: 'administrator_user'
   resources :administrator
 
+  put 'administrator/:id/reject', to: 'administrator#reject', as: 'reject_user'
+  put 'administrator/:id/approve', to: 'administrator#approve', as: 'approve_user'
   root :to => "welcome#index"
   get '/about', to: 'user#about'
   get '/help',to: 'user#help'
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   get 'user/:id/profile', to: 'user#profile', as: 'user_profile'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   post '/alogin', to: 'sessions#a_log_in'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

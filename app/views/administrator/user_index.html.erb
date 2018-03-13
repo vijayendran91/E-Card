@@ -1,1 +1,45 @@
-<%=@user.fname%>
+<h1><%=@user.fname%>'s Profile</h1>
+<div class="container">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">First Name</th>
+        <td><%=@user.fname%></td>
+      </tr>
+      <tr>
+        <th scope="row">Middle Name</th>
+        <td><%=@user.mname%></td>
+      </tr>
+      <tr>
+        <th scope="row">Last Name</th>
+        <td><%=@user.lname%></td>
+      </tr>
+      <tr>
+        <th scope="row">Father's Name</th>
+        <td><%=@user.father_name%></td>
+      </tr>
+      <tr>
+        <th scope="row">Passport Number</th>
+        <td><%= @user.passport%></td>
+      </tr>
+      <tr>
+        <th scope="row">Passport Image</th>
+        <td><%=image_tag @user.passport_image.url(:medium)%></td>
+      </tr>
+      <tr>
+        <th scope="row">Aadhaar Number</th>
+        <td><%=@user.aadhaar%></td>
+      </tr>
+      <tr>
+        <th scope="row">Aadhaar Image</th>
+        <%if @user.aadhar_image?%>
+        <td><%=image_tag @user.aadhar_image.url(:medium)%></td>
+        <%else%>
+        <td>Image not Available</td>
+        <%end%>
+      </tr>
+    </tbody>
+  </table>
+  <%=link_to "Approve",approve_user_path(@user),method: "put",class: "btn btn-success"%>
+  <%=link_to "Reject",reject_user_path(@user),method: "put",class:"btn btn-danger"%>
+</div>

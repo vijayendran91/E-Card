@@ -5,7 +5,7 @@
       user = User.find_by(user_name: params[:session][:user_name])
       if user && user.authenticate(params[:session][:password])
         log_in user
-        if user.flag == 3
+        if user.flag == 2
           redirect_to user_profile_path(user)
         else
           redirect_to user_path(params[:session][:user_name])

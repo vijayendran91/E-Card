@@ -28,6 +28,21 @@ class AdministratorController < ApplicationController
     @user=User.find_by_user_name(params[:id])
   end
 
+  def approve
+    @user=User.find_by_user_name(params[:id])
+    @user.flag=2
+    if @user.save
+      redirect_to administrator_index_path
+    else
+      flash.now[:danger]= "Some Error Occured Please try Again"
+      redirect_to administrator_index_path
+    end
+
+  end
+
+  def reject
+  end
+
   def delete
     admin_log_out
     render administrator_path
